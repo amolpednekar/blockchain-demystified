@@ -41,6 +41,7 @@ On Linux
 
 ``` bash
 $ sudo apt-get install build-essential
+$ apt-get install python
 ```
 
 On Windows
@@ -48,6 +49,15 @@ On Windows
 npm install --global windows-build-tools
 npm install --global grpc
 ```
+Install python version 2.7
+
+## Testing
+
+At the end of these instructions, you must have the following softwares installed
+* Docker
+* Docker-compose
+* NodeJS & npm
+* python
 
 ## License <a name="license"></a>
 
