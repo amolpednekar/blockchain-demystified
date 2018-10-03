@@ -1,4 +1,4 @@
-# intro-to-blockchain-pcce
+# Blockchain Desmystified - Hyperledger Fabric
 
 ## Download pre-requisites
 
