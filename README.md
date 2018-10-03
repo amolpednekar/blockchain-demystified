@@ -35,6 +35,19 @@ are 1.2.0, 1.2.0 and 0.4.10 respectively.
 $ ./scripts/bootstrap.sh 1.2.0
 $ export PATH=$PATH:/root/intro-to-blockchain-pcce/scripts/bin
 ```
+## NodeJS Package installtion requirements
+
+On Linux
+
+``` bash
+$ sudo apt-get install build-essential
+```
+
+On Windows
+```
+npm install --global windows-build-tools
+npm install --global grpc
+```
 
 ## License <a name="license"></a>
 
