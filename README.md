@@ -1,18 +1,20 @@
-# Blockchain Desmystified - Hyperledger Fabric
+# Blockchain Desmystified 
 
-## Download pre-requisites
+## Hyperledger Fabric
 
-### Docker & Docker-Compose
+### Download pre-requisites
 
-#### Docker Installation Instructions: 
+#### Docker & Docker-Compose
+
+##### Docker Installation Instructions: 
 https://docs.docker.com/install/#releases (Docker version 17.06.2-ce or greater is required.)
 You can test your installation by running `docker run hello-world`; It should print a message "Hello from Docker!"
 
-#### Docker-compose installation: 
+##### Docker-compose installation: 
 https://docs.docker.com/compose/install/#install-compose (Recommended version - 1.22.0)
 You can test by running `docker-compose --version`, it should give you the version number. 
 
-### NodeJS
+#### NodeJS
 
 Run the following steps 
 
@@ -23,7 +25,7 @@ $ nvm install 8.11.3
 ```
 Windows setup: https://nodejs.org/en/download/
 
-## Download Binaries and Docker Images
+#### Download Binaries and Docker Images
 
 The [`scripts/bootstrap.sh`](https://github.com/hyperledger/fabric-samples/blob/release-1.2/scripts/bootstrap.sh)
 script will preload all of the requisite docker
@@ -35,23 +37,23 @@ are 1.2.0, 1.2.0 and 0.4.10 respectively.
 $ ./scripts/bootstrap.sh 1.2.0
 $ export PATH=$PATH:/root/intro-to-blockchain-pcce/scripts/bin
 ```
-## NodeJS Package installtion requirements
+#### NodeJS Package installtion requirements
 
-On Linux
+**On Linux**
 
 ``` bash
 $ sudo apt-get install build-essential
 $ apt-get install python
 ```
 
-On Windows
+**On Windows**
 ```
 npm install --global windows-build-tools
 npm install --global grpc
 ```
 Install python version 2.7
 
-## Testing
+#### Testing
 
 At the end of these instructions, you must have the following softwares installed
 * Docker
@@ -59,9 +61,16 @@ At the end of these instructions, you must have the following softwares installe
 * NodeJS & npm
 * python
 
-## License <a name="license"></a>
+## Multichain
 
-Hyperledger Project source code files are made available under the Apache
-License, Version 2.0 (Apache-2.0), located in the [LICENSE](LICENSE) file.
-Hyperledger Project documentation files are made available under the Creative
-Commons Attribution 4.0 International License (CC-BY-4.0), available at http://creativecommons.org/licenses/by/4.0/.
+### Installing MultiChain on Linux
+```bash
+$ cd /tmp
+$ wget https://www.multichain.com/download/multichain-1.0.6.tar.gz
+$ tar -xvzf multichain-1.0.6.tar.gz
+$ cd multichain-1.0.6
+$ mv multichaind multichain-cli multichain-util /usr/local/bin (to make easily accessible on the command line)
+```
+
+### Installing MultiChain on Windows
+Download https://www.multichain.com/download/multichain-windows-1.0.6.zip and extract its contents to your chosen directory.
