@@ -6,10 +6,14 @@
 
 ##### Docker Installation Instructions: 
 https://docs.docker.com/install/#releases (Docker version 17.06.2-ce or greater is required.)
+
+Install docker according to your Operating System. Here are instructions for Ubuntu OS - https://docs.docker.com/install/linux/docker-ce/ubuntu/ 
+
 You can test your installation by running `docker run hello-world`; It should print a message "Hello from Docker!"
 
 ##### Docker-compose installation: 
-https://docs.docker.com/compose/install/#install-compose (Recommended version - 1.22.0)
+https://docs.docker.com/compose/install/#install-compose (Recommended version - 1.22.0). Select the tab based on your OS and install.
+
 You can test by running `docker-compose --version`, it should give you the version number. 
 
 #### NodeJS
@@ -18,22 +22,21 @@ Run the following steps
 
 Linux setup:
 ```bash
-$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-$ nvm install 8.11.3
+$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash  #Installs NodeJS version manager
+$ source ~/.bashrc #Reloads the shell
+$ nvm install 8.11.3    #Installs NodeJS version 8.11.3
 ```
 Windows setup: https://nodejs.org/en/download/
 
-#### Download Binaries and Docker Images
+#### Download Fabric Binaries and Docker Images
 
-The [`scripts/bootstrap.sh`](https://github.com/hyperledger/fabric-samples/blob/release-1.2/scripts/bootstrap.sh)
-script will preload all of the requisite docker
-images for Hyperledger Fabric and tag them with the 'latest' tag. Optionally,
-specify a version for fabric, fabric-ca and thirdparty images. Default versions
-are 1.2.0, 1.2.0 and 0.4.10 respectively.
+The bootstrap script will preload all of the requisite docker images and binaries for Hyperledger Fabric
 
 ```bash
-$ ./scripts/bootstrap.sh 1.2.0
-$ export PATH=$PATH:/root/intro-to-blockchain-pcce/scripts/bin
+$ cd blockchain-demystified/hyperledger-fabric/scripts/
+$ sudo chmod +x bootstrap.sh
+$ ./bootstrap.sh 1.2.0
+$ export PATH=$PATH:$PWD/bin    #Add binaries to executable path
 ```
 #### NodeJS Package installtion requirements
 
@@ -41,7 +44,7 @@ $ export PATH=$PATH:/root/intro-to-blockchain-pcce/scripts/bin
 
 ``` bash
 $ sudo apt-get install build-essential
-$ apt-get install python
+$ sudo apt-get install python
 ```
 
 **On Windows**
@@ -58,3 +61,18 @@ At the end of these instructions, you must have the following softwares installe
 * Docker-compose
 * NodeJS & npm
 * python
+
+## Getting started
+
+```bash
+$ cd blockchain-demystified/hyperledger-fabric/sdk/
+$ sudo chmod +x startFabric.sh ../basic-network/start.sh ../basic-network/stop.sh
+$ ./startFabric.sh
+$ node enrollAdmin.js
+$ node registerUser.js
+$ node query.js queryAllCars
+$ node invoke.js createCar CAR12 Honda Accord Black Tom
+$ node query.js queryCar CAR12
+$ node invoke.js changeCarOwner CAR12 Dave 
+$ node query.js queryCar CAR12
+```
