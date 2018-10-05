@@ -62,6 +62,11 @@ At the end of these instructions, you must have the following softwares installe
 * NodeJS & npm
 * python
 
+#### Full setup guide
+All the above steps are taken from the guides below, if you want more detailed documentation.
+[Pre-requisites](https://hyperledger-fabric.readthedocs.io/en/latest/prereqs.html)
+[Samples, Binaries and Docker Images](https://hyperledger-fabric.readthedocs.io/en/latest/install.html)
+
 ## Getting started
 
 ```bash
