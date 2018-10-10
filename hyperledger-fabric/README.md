@@ -79,10 +79,10 @@ $ cd blockchain-demystified/hyperledger-fabric/sdk/
 $ sudo chmod +x startFabric.sh ../basic-network/start.sh ../basic-network/stop.sh
 $ ./startFabric.sh
 $ node enrollAdmin.js
-$ node registerUser.js
-$ node query.js queryAllCars
-$ node invoke.js createCar CAR12 Honda Accord Black Tom
-$ node query.js queryCar CAR12
-$ node invoke.js changeCarOwner CAR12 Dave 
-$ node query.js queryCar CAR12
+$ node registerUser.js John
+$ node query.js John fabcar queryAllCars
+$ node invoke.js John fabcar createCar CAR12 Honda Accord Black Tom
+$ node query.js John fabcar  queryCar CAR12
+$ node invoke.js John fabcar changeCarOwner CAR12 Dave 
+$ node query.js John fabcar queryCar CAR12
 ```

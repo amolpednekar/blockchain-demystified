@@ -27,6 +27,11 @@ var store_path = path.join(__dirname, 'hfc-key-store');
 console.log('Store path:'+store_path);
 var tx_id = null;
 
+const username = process.argv[2]
+const chaincodeName = process.argv[3]
+var fcn_name = process.argv[4]
+var fcn_args = process.argv.slice(5)
+
 // create the key value store as defined in the fabric-client/config/default.json 'key-value-store' setting
 Fabric_Client.newDefaultKeyValueStore({ path: store_path
 }).then((state_store) => {
@@ -40,22 +45,21 @@ Fabric_Client.newDefaultKeyValueStore({ path: store_path
 	fabric_client.setCryptoSuite(crypto_suite);
 
 	// get the enrolled user from persistence, this user will sign all requests
-	return fabric_client.getUserContext('user1', true);
+	return fabric_client.getUserContext(username, true);
 }).then((user_from_store) => {
 	if (user_from_store && user_from_store.isEnrolled()) {
-		console.log('Successfully loaded user1 from persistence');
+		console.log('Successfully loaded'+ username +' from persistence');
 		member_user = user_from_store;
 	} else {
-		throw new Error('Failed to get user1.... run registerUser.js');
+		throw new Error('Failed to get' + username + '.... run registerUser.js');
 	}
 
 	// queryCar chaincode function - requires 1 argument, ex: args: ['CAR4'],
 	// queryAllCars chaincode function - requires no arguments , ex: args: [''],
-	var fcn_name = process.argv[2]
-	var fcn_args = process.argv.slice(3)
+
 	const request = {
 		//targets : --- letting this default to the peers assigned to the channel
-		chaincodeId: 'fabcar',
+		chaincodeId: chaincodeName,
 		fcn: fcn_name,
 		args: fcn_args
 	};
