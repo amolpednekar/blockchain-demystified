@@ -54,3 +54,6 @@ $ multichain-cli chain1 --rpcport=5999 --datadir=/root/.multichain/node2-chain1/
 >>> liststreamitems stream1
 >>> publish stream1 key1 AB (should give an error)
 ```
+## Self-learning
+
+[Developer docs](https://www.multichain.com/developers/)
