@@ -86,3 +86,7 @@ $ node query.js John fabcar  queryCar CAR12
 $ node invoke.js John fabcar changeCarOwner CAR12 Dave 
 $ node query.js John fabcar queryCar CAR12
 ```
+
+## Self-learning
+
+[Writing your first application](https://hyperledger-fabric.readthedocs.io/en/latest/write_first_app.html)

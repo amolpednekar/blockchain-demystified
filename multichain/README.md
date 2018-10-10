@@ -37,7 +37,7 @@ $ multichaind chain1@[ip-address]:5000 --port=6000 --rpcport=5999 --datadir=/roo
 
 Back on terminal one
 ```bash
-$ multichain-cli chain1 --rpcport=4999 --datadir=/root/.multichain/chain1
+$ multichain-cli chain1 --rpcport=4999 --datadir=/root/.multichain/node1-chain1
 >>> grant 13JG1AayNhH3aYvkZRCh81uBeJiLLNWWsR9Pkw connect,send,receive
 ` streams `
 >>> create stream stream1 false
@@ -47,10 +47,10 @@ $ multichain-cli chain1 --rpcport=4999 --datadir=/root/.multichain/chain1
 
 On terminal two
 ```bash
-$ multichaind chain1@10.53.16.135:5000 --port=6000 --rpcport=5999 --datadir=/root/.multichain/node2-chain1 --daemon
+$ multichaind chain1@[ip-address]:5000 --port=6000 --rpcport=5999 --datadir=/root/.multichain/node2-chain1 --daemon
 $ multichain-cli chain1 --rpcport=5999 --datadir=/root/.multichain/node2-chain1/chain1
 >>> getinfo
->>> publish stream1 key1 AB (should give an error)
 >>> subscribe stream1
->>> liststreamkeyitems stream1 key1
+>>> liststreamitems stream1
+>>> publish stream1 key1 AB (should give an error)
 ```
