@@ -1,6 +1,6 @@
 # Hyperledger Fabric Guide
 
-## Download pre-requisites
+## Pre-requisites
 
 ### Docker & Docker-Compose
 

@@ -1,6 +1,6 @@
 # Ethereum Guide
 
-## Download pre-requisites
+## Pre-requisites
 
 ### Geth (Go-Ethereum client): 
 [https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Ubuntu](https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Ubuntu)

@@ -1,6 +1,6 @@
 # Multichain Guide
 
-## Download pre-requisites
+## Pre-requisites
 
 ### Installing MultiChain on Linux 
 ```bash
