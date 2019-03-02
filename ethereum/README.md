@@ -28,13 +28,13 @@ $ # View created accounts
 > personal.listAccounts
 > ["0x7097419d4b5addf1db3cd92504ab38d2bde53949"]
 > # Set the address to which mining rewards will go to
-> miner.setEtherbase("0x7097419d4b5addf1db3cd92504ab38d2bde53949")
+> miner.setEtherbase(web3.personal.listAccounts[0])
 > # Start, stop mining
 > miner.start()
 > miner.stop()
 > # Wait for the DAG to get generated for the logs to stop
 > # View balance
-> web3.eth.getBalance("0x7097419d4b5addf1db3cd92504ab38d2bde53949")
+> web3.eth.getBalance(web3.personal.listAccounts[0])
 > # Unlock account to deploy contracts
 > web3.personal.unlockAccount(web3.personal.listAccounts[0],"<password>", 15000)
 > # Start rpc listener
@@ -48,6 +48,6 @@ $ # View created accounts
 
 ### Interact with Smart Contract 
 
-* [Browser-compiler solidity](http://remix.ethereum.org/#optimize=true&amp;version=soljson-v0.4.24+commit.e67f0147.js)
-* [With javascript](./Web3Integration.md)
+* [Browser-compiler solidity](https://remix.ethereum.org/)
+* [With javascript](./js/Web3Integration.md)
 
