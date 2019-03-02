@@ -1,7 +1,9 @@
+# Web3 Setup
 
-# Install NodeJS:
+## Install NodeJS:
 
-[https://github.com/creationix/nvm](https://github.com/creationix/nvm)
+* [Install NVM (Node version manager)](https://github.com/creationix/nvm)
+* Install NodeJS
 ```
 nvm install 8.0.0
 
@@ -10,14 +12,14 @@ node -v
 npm -v
 ```
 
-# Install web3
+## Install web3
 ```
-npm install web3@0.20.6
+npm install --save web3
 ```
-[Docs](https://github.com/ethereum/wiki/wiki/JavaScript-API#web3ethaccounts)
+* [Web3 Docs](https://github.com/ethereum/wiki/wiki/JavaScript-API#web3ethaccounts)
 
 
-# Sample javascript :
+## Sample javascript :
 
 ```javascript
 var Web3= require('web3')

@@ -2,7 +2,6 @@ pragma solidity ^0.4.22;
 
 contract Simple
 {
-    
     uint a;
     
     constructor () public {
@@ -21,6 +20,4 @@ contract Simple
         a=x;
         
     }
-    
-    
 }
