@@ -2,8 +2,6 @@ var Web3 = require('web3')
 
 web3 = new Web3(new Web3.providers.HttpProvider("http://10.80.67.79:8545"));
 
-console.log(web3.eth.accounts.wallet)
-
 abi = [
 	{
 		"constant": false,
@@ -59,14 +57,24 @@ myContract.methods.getData().call().then((result) => {
 	console.log("GetData success:" + result)
 }).catch((err) => console.log("GetData error: " + err))
 
-myContract.methods.setData(200).send({
+myContract.methods.setData(500).send({
 	from: accountAddress,
 	gas: 4000000
 }).once('transactionHash', function (hash) {
 	console.log(hash)
-}).once('receipt', function (receipt) {
-	myContract.methods.getData().call().then((result) => {
-		console.log("GetData success:" + result)
-	}).catch((err) => console.log("GetData error: " + err))
+}).on('confirmation', function (confirmation, receipt) {
+	if (confirmation == 4) {
+		myContract.methods.getData().call().then((result) => {
+			console.log("GetData success:" + result)
+		}).catch((err) => console.log("GetData error: " + err))
+	}
 }).on('error', function (error) { console.log(error) })
 
+// wait for 24 confirmations
+/* 
+.once('receipt', function (receipt) {
+		myContract.methods.getData().call().then((result) => {
+			console.log("GetData success:" + result)
+		}).catch((err) => console.log("GetData error: " + err))
+	})
+*/
